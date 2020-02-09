@@ -23,7 +23,7 @@ export const Separator = styled.View`
 
 export const Form = styled.ScrollView.attrs({
   showsVerticalScrollIndicator: false,
-  contentContainerStyle: {padding: 30},
+  contentContainerStyle: { padding: 30 },
 })`
   align-self: stretch;
   margin-top: 50px;

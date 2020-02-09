@@ -1,11 +1,11 @@
-import React, {useEffect, useState} from 'react';
+import React, { useEffect, useState } from 'react';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 import api from '~/services/api';
 
 import Background from '~/components/Background';
 import Appointment from '~/components/Appointment';
 
-import {Container, Title, List} from './styles';
+import { Container, Title, List } from './styles';
 
 export default function Dashboard() {
   const [appointments, setAppointments] = useState([]);
@@ -21,7 +21,7 @@ export default function Dashboard() {
   }, []);
 
   async function handleCancel(id) {
-    const response = await api.delete(`apointments/${id}`);
+    const response = await api.delete(`appointments/${id}`);
 
     setAppointments(
       appointments.map(appointment =>
@@ -42,7 +42,7 @@ export default function Dashboard() {
         <List
           data={appointments}
           keyExtractor={item => String(item)}
-          renderItem={({item}) => (
+          renderItem={({ item }) => (
             <Appointment onCancel={() => handleCancel(item.id)} data={item} />
           )}
         />
@@ -53,7 +53,7 @@ export default function Dashboard() {
 
 Dashboard.navigationOptions = {
   tabBarLabel: 'Agendamentos',
-  tabBarIcon: ({tintColor}) => (
+  tabBarIcon: ({ tintColor }) => (
     <Icon name="event" size={29} color={tintColor} />
   ),
 };

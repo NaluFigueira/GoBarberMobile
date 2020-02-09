@@ -1,10 +1,10 @@
-import React, {useRef, useState, useEffect} from 'react';
-import {useSelector, useDispatch} from 'react-redux';
+import React, { useRef, useState, useEffect } from 'react';
+import { useSelector, useDispatch } from 'react-redux';
 import Icon from 'react-native-vector-icons/MaterialIcons';
 
 import Background from '~/components/Background';
-import {updateProfileRequest} from '~/store/modules/user/actions';
-import {signOut} from '~/store/modules/auth/actions';
+import { updateProfileRequest } from '~/store/modules/user/actions';
+import { signOut } from '~/store/modules/auth/actions';
 
 import {
   Container,
@@ -125,7 +125,7 @@ export default function Profile() {
 
 Profile.navigationOptions = {
   tabBarLabel: 'Meu perfil',
-  tabBarIcon: ({tintColor}) => (
+  tabBarIcon: ({ tintColor }) => (
     <Icon name="person" size={20} color={tintColor} />
   ),
 };
